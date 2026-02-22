@@ -1,8 +1,8 @@
 # YN++ (CLI)
 
-YN++ is a slang-style language that transpiles to Python and runs locally.
+YN++ is a slang-style language that transpiles to Python and runs locally, for niggas, by niggas.
 
-This repository is focused on the **language runtime** (not the website UI).
+This repository is focused on the **language runtime**.
 
 ## Requirements
 
