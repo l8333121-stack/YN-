@@ -1,0 +1,61 @@
+# YN++ Functions - cook up some code
+
+# ── Basic function ────────────────────
+cook greet(name):
+    spit("Yo " + name + "! What's good?")
+
+greet("Tyrone")
+greet("Shaniqua")
+
+# ── Function with return ──────────────
+cook calculate_tip(bill, percent):
+    tip = bill * (percent / 100)
+    drop tip
+
+meal = 45.00
+tip = calculate_tip(meal, 20)
+spit("Bill:", meal)
+spit("Tip:", tip)
+spit("Total:", meal + tip)
+
+# ── Function with conditionals ────────
+cook vibe_check(mood):
+    ifreal mood == "lit":
+        drop "We turnt up!"
+    orcap mood == "chill":
+        drop "Relaxing, no stress."
+    orcap mood == "stressed":
+        drop "Take a breather, you got this."
+    bet:
+        drop "Keep pushing!"
+
+spit("\nVibe check:")
+spit(vibe_check("lit"))
+spit(vibe_check("chill"))
+spit(vibe_check("stressed"))
+
+# ── Fibonacci ─────────────────────────
+cook fib(n):
+    ifreal n <= 1:
+        drop n
+    drop fib(n - 1) + fib(n - 2)
+
+spit("\nFibonacci sequence:")
+slide i inna runup(10):
+    spit(fib(i), end=" ")
+spit()
+
+# ── FizzBuzz Hood Edition ─────────────
+cook hood_fizzbuzz(n):
+    slide i inna runup(1, n + 1):
+        ifreal i % 15 == 0:
+            spit("SheeshBruh")
+        orcap i % 3 == 0:
+            spit("Sheesh")
+        orcap i % 5 == 0:
+            spit("Bruh")
+        bet:
+            spit(i)
+
+spit("\nFizzBuzz Hood Edition (1-20):")
+hood_fizzbuzz(20)

@@ -1,0 +1,70 @@
+# YN++ Classes - build your squad
+# Using nigga for self-reference in classes
+
+squad Hustler:
+    cook __init__(nigga, name, skill, bread):
+        nigga.name = name
+        nigga.skill = skill
+        nigga.bread = bread
+
+    cook introduce(nigga):
+        spit(nigga.name + " - " + nigga.skill)
+        spit("  Bread: $" + words(nigga.bread))
+
+    cook grind_harder(nigga, hours):
+        earned = hours * 50
+        nigga.bread = nigga.bread + earned
+        spit(nigga.name + " put in " + words(hours) + " hours and earned $" + words(earned))
+
+    cook check_status(nigga):
+        ifreal nigga.bread >= 10000:
+            spit(nigga.name + " living large!")
+        orcap nigga.bread >= 5000:
+            spit(nigga.name + " stacking up nice.")
+        bet:
+            spit(nigga.name + " still grinding. Stay focused.")
+
+
+# Inheritance - OG is super (the parent class)
+squad BossHustler(Hustler):
+    cook __init__(nigga, name, skill, bread, crew_size):
+        OG().__init__(name, skill, bread)
+        nigga.crew_size = crew_size
+
+    cook introduce(nigga):
+        OG().introduce()
+        spit("  Crew size:", nigga.crew_size, "deep")
+
+    cook pay_the_crew(nigga):
+        cut = nigga.bread // nigga.crew_size
+        spit(nigga.name + " splitting $" + words(nigga.bread) + " with the crew")
+        spit("  Each one getting $" + words(cut))
+
+
+# Build the squad
+spit("=== The Squad ===\n")
+
+marcus = Hustler("Marcus", "Web Developer", 3000)
+aisha = Hustler("Aisha", "Data Scientist", 8000)
+jamal = Hustler("Jamal", "Mobile Dev", 5500)
+
+marcus.introduce()
+aisha.introduce()
+jamal.introduce()
+
+spit("\n=== Grind Session ===\n")
+marcus.grind_harder(40)
+marcus.grind_harder(40)
+aisha.grind_harder(20)
+jamal.grind_harder(30)
+
+spit("\n=== Status Check ===\n")
+marcus.check_status()
+aisha.check_status()
+jamal.check_status()
+
+# Boss level
+spit("\n=== Boss Mode ===\n")
+boss = BossHustler("Trina", "Full Stack", 25000, 5)
+boss.introduce()
+boss.pay_the_crew()

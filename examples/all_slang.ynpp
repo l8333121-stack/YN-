@@ -1,0 +1,128 @@
+# YN++ - Showing off ALL the new slang
+
+# ── yo is an alternative to spit (both mean print) ──
+yo("Wassup! Let me show you what YN++ can do")
+yo("=" * 50)
+
+# ── nocap / ongod = True, cappin = False ──
+real = nocap
+fake = cappin
+
+yo("nocap is:", real)
+yo("cappin is:", fake)
+
+# ── deadass = assert (I'm deadass serious about this) ──
+x = 10
+deadass x == 10, "x better be 10 fr"
+yo("deadass check passed - x is 10")
+
+# ── yeet = del (throw that away) ──
+trash = "old data"
+yo("\nBefore yeet:", trash)
+yeet trash
+yo("yeeted that variable outta here")
+
+# ── say_less = return (alternative to drop) ──
+cook get_greeting(name):
+    say_less "What's good " + name + "!"
+
+yo("\n" + get_greeting("DeMarcus"))
+
+# ── trap/fumble = try/except (alternative to shootyashot/brick) ──
+yo("\n── Error handling with trap/fumble ──")
+trap:
+    result = whole("not a number")
+fumble:
+    yo("Fumbled that conversion, but we good")
+
+# ── trippin = raise ──
+cook check_age(age):
+    ifreal age < 0:
+        trippin ValueError("Nah you trippin, age can't be negative")
+    say_less age
+
+trap:
+    check_age(-5)
+fumble ValueError as e:
+    yo("Caught it:", e)
+
+# ── highkey / lowkey = max / min ──
+scores = [85, 92, 78, 95, 88]
+yo("\n── Scores ──")
+yo("Scores:", scores)
+yo("Highkey (max):", highkey(scores))
+yo("Lowkey (min):", lowkey(scores))
+yo("Sum up:", sum_up(scores))
+yo("Rounded avg:", round_up(sum_up(scores) / count(scores), 1))
+
+# ── mob = map, each_one = enumerate ──
+yo("\n── mob (map) through the scores ──")
+curved = stack(mob(lamba s: s + 5, scores))
+yo("Curved scores:", curved)
+
+yo("\n── each_one (enumerate) ──")
+slide i, score inna each_one(curved):
+    yo("  #" + words(i + 1) + ":", score)
+
+# ── any_real / all_real ──
+yo("\nAll passing (>70)?", all_real(mob(lamba s: s > 70, curved)))
+yo("Any perfect (100)?", any_real(mob(lamba s: s == 100, curved)))
+
+# ── link_up = zip ──
+names = ["Keisha", "Darnell", "Aaliyah", "Tyrell", "Jasmine"]
+yo("\n── link_up (zip) names with scores ──")
+slide name, score inna link_up(names, curved):
+    yo("  " + name + ": " + words(score))
+
+# ── OG / big_homie = super ──
+yo("\n── OG (super) in classes ──")
+squad Animal:
+    cook __init__(nigga, name):
+        nigga.name = name
+    cook speak(nigga):
+        say_less nigga.name + " makes a sound"
+
+squad Dog(Animal):
+    cook speak(nigga):
+        # big_homie is another way to say super/OG
+        parent_msg = big_homie().speak()
+        say_less nigga.name + " says WOOF"
+
+rex = Dog("Rex")
+yo(rex.speak())
+
+# ── posted = global ──
+counter = 0
+cook increment():
+    posted counter
+    counter = counter + 1
+
+increment()
+increment()
+increment()
+yo("\nGlobal counter after 3 increments:", counter)
+
+# ── run_it_back = continue ──
+yo("\n── run_it_back (continue) - skip even numbers ──")
+slide i inna runup(1, 11):
+    ifreal i % 2 == 0:
+        run_it_back
+    yo(i, end=" ")
+yo()
+
+# ── check = isinstance ──
+yo("\n── check (isinstance) ──")
+yo("Is 42 a whole number?", check(42, whole))
+yo("Is 'hello' words?", check("hello", words))
+
+# ── fasho = bool ──
+yo("fasho(1):", fasho(1))
+yo("fasho(0):", fasho(0))
+yo("fasho('real'):", fasho("real"))
+
+# ── real_one / on_the_block = __name__ / "__main__" ──
+ifreal real_one == on_the_block:
+    yo("\n" + "=" * 50)
+    yo("This script running as main - we on the block!")
+    yo("YN++ got all the slang you need.")
+    yo("Now go cook something up!")

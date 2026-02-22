@@ -1,0 +1,35 @@
+# YN++ Guessing Game
+
+plug random
+
+number = random.randint(1, 50)
+tries = 0
+max_tries = 7
+
+spit("=== Number Guessing Game ===")
+spit("I'm thinking of a number between 1 and 50.")
+spit("You got " + words(max_tries) + " tries. Good luck!\n")
+
+grind tries < max_tries:
+    guess_text = holla("What's your guess? ")
+
+    shootyashot:
+        guess = whole(guess_text)
+    brick:
+        spit("Nah, that ain't a number. Try again.")
+        keepitmovin
+
+    tries = tries + 1
+    left = max_tries - tries
+
+    ifreal guess == number:
+        spit("\nYOOO you got it! The number was " + words(number))
+        spit("Took you " + words(tries) + " tries. Respect!")
+        dip
+    orcap guess < number:
+        spit("Too low! " + words(left) + " tries left.")
+    bet:
+        spit("Too high! " + words(left) + " tries left.")
+bet:
+    spit("\nDamn, you ran out of tries.")
+    spit("The number was " + words(number) + ". Better luck next time!")

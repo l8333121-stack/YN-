@@ -1,0 +1,41 @@
+# YN++ Basics - Variables, Conditions, Loops
+
+# ── Variables ─────────────────────────
+name = "DeShawn"
+age = 22
+gpa = 3.8
+enrolled = facts
+
+spit("Name:", name)
+spit("Age:", age)
+spit("GPA:", gpa)
+
+# ── Conditionals ──────────────────────
+ifreal gpa >= 3.5:
+    spit(name + " on the honor roll! Big moves.")
+orcap gpa >= 2.5:
+    spit(name + " doing solid. Keep grinding.")
+bet:
+    spit(name + " gotta lock in fr.")
+
+# ── Loops ─────────────────────────────
+spit("\nCounting down:")
+slide i inna runup(5, 0, -1):
+    spit(i)
+spit("We out!")
+
+# ── While loop ────────────────────────
+spit("\nGrinding til we hit 100:")
+bread = 10
+grind bread < 100:
+    bread = bread * 2
+    spit("Stacked up to:", bread)
+spit("We made it:", bread)
+
+# ── Lists ─────────────────────────────
+crew = ["Marcus", "Aisha", "Jamal", "Keisha", "DeMarcus"]
+spit("\nThe crew:")
+slide member inna crew:
+    spit(" -", member)
+
+spit("Crew size:", count(crew))

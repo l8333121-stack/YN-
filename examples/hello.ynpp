@@ -1,0 +1,8 @@
+# First YN++ program - Hello World
+
+spit("Wassup world!")
+spit("Welcome to YN++")
+spit("We out here coding now")
+
+name = holla("What's your name? ")
+spit("Respect, " + name + "! You finna be a developer.")
